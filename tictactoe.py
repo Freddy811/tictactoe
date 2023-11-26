@@ -38,8 +38,11 @@ def tic_tac_toe():
         # Check for exception if input is no a value that can be parsed to an int
         try:            
             board_row = int(input(f"Enter the row (0, 1, or 2) for {current_player}: "))
+        except ValueError:
+            print(f"Please input a number")
+            continue
+        try:
             board_col = int(input(f"Enter the column (0, 1, or 2) for {current_player}: "))
-
         except ValueError:
             print(f"Please input a number")
             continue
