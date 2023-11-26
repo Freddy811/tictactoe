@@ -35,6 +35,7 @@ def tic_tac_toe():
 
     while True:
         print_game_board(game_board)
+        # Check for exception if input is no a value that can be parsed to an int
         try:            
             board_row = int(input(f"Enter the row (0, 1, or 2) for {current_player}: "))
             board_col = int(input(f"Enter the column (0, 1, or 2) for {current_player}: "))
@@ -42,7 +43,8 @@ def tic_tac_toe():
         except ValueError:
             print(f"Please input a number")
             continue
-
+        
+        # Check for exception if number is not in the range of 0, 1 and 2
         try:
             if game_board[board_row][board_col] == ' ':
                 game_board[board_row][board_col] = current_player
